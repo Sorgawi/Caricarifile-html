@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <title><data:blog.pageTitle/></title>
+    <b:skin><![CDATA[
+      body {
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header Sticky Jumbo */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #111;
+        padding: 45px 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        border-bottom: 2px solid #444;
+      }
+      .header a {
+        background-color: #444;
+        color: white;
+        padding: 24px 50px;
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 12px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .header a:hover {
+        background-color: #666;
+      }
+
+      /* Grid Container */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .grid-item {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #111;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 5px;
+      }
+      .grid-item p {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 8px;
+        color: #fff;
+      }
+      a {
+        color: #fff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Overlay Video */
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none; /* biar ga ganggu klik link */
+        transition: opacity 0.3s ease;
+      }
+      .video-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+/* Posisi vertikal */
+.video-overlay.top {
+  align-items: flex-start;   /* atas */
+}
+.video-overlay.center {
+  align-items: center;       /* tengah */
+}
+.video-overlay.bottom {
+  align-items: flex-end;     /* bawah */
+}
+
+
+
+      /* Ikon Play */
+      .play-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .play-icon:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 20px solid #000;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+      }
+
+      /* Sembunyikan garis bawah link dalam grid-item */
+      .grid-item a,
+      .grid-item a:link,
+      .grid-item a:visited,
+      .grid-item a:hover,
+      .grid-item a:active {
+        text-decoration: none !important;
+        color: inherit;
+      }
+
+      /* Tombol halaman */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .page-btn {
+        background-color: #ff7f00;
+        color: #fff;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+      .page-btn:hover {
+        background-color: #ff9900;
+      }
+ 
+  /* Tambah */
+ .thumbnail {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.video-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+
+]]></b:skin>
+  </head>
+  <body>
+
+    <!-- Header dengan Link -->
+    <div class='header'>
+      <a href='https://galerimisbah.blogspot.com/'>Home</a>
+      <a href='https://galerimisbah.blogspot.com/'>📂 Koleksi</a>
+      <a href='https://galerimisbah.blogspot.com/'>Tentang</a>
+      <a href='https://galerimisbah.blogspot.com/'>Kontak</a>
+    </div>
+
+    <!-- Teks Berjalan -->
+    <div class='marquee-text'>
+      <marquee behavior='scroll' direction='left' scrollamount='6'>
+        📢 Selamat datang di galeri Amelia Mutya! Tonton Dan Download koleksi video eksklusifnya di bawah ini TANPA IKLAN! | 📢 Sumber Video Di Dapatkan Dari https://uc-share.com/s/57ab5f85b20e4 Dan Dari Sosmed Lainnya |📢 Ini Situs Dibuat Hanya Untuk Koleksi Pribadi Tidak Diperjual Belikan, Pemilik @MisbahululAzmi .|
+      </marquee>
+    </div>
+
+    <!-- Galeri -->
+    <b:section class='main' id='main' showaddelement='yes'>
+      <b:widget id='HTML1' locked='false' title='Galeri' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'/>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <div class='grid-container'>
+            
+            
+            <!-- Item 1 -->
+      <div class='video-overlay center'><div class='play-icon'/></div>
+      
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='www.google.com'>
+    <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    </a>
+    <p> Kucing Besar 1</p>
+</div>
+
+                   
+            
+<!-- Item 2 -->
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <img alt='Gambar 2' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    <p>Kucing Besar  2</p>
+  </a>
+</div>
+
+<!-- Item 3 -->
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <img alt='Gambar 3' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    <p>Kucing Besar 3</p>
+  </a>
+</div>
+
+            
+<!-- item 4-->
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <!-- Bagian Thumbnail -->
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <div class='thumbnail'>
+      <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+      <div class='video-overlay'><div class='play-icon'/></div>
+    </div>
+  </a>
+  <!-- Bagian Judul -->
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <p class='video-title'>Uji Kucing Besar 4 Yos Bagus Tikus Tikus Keluar 30 Yung Bihira Mag Simba Pero Madalas Naman Lumuhod sa Boyfriend Niya. HIHI</p>
+  </a>
+</div>
+
+
+ <!-- Item 5-->
+      <div class='video-overlay center'><div class='play-icon'/></div>
+      
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='www.google.com'>
+    <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    </a>
+    <p>Kucing Besar 5</p>
+</div>
+
+
+ <!-- Item 6-->
+      <div class='video-overlay center'><div class='play-icon'/></div>
+      
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='www.google.com'>
+    <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    </a>
+    <p>Kucing Besar 6</p>
+</div>            
+            
+            
+<!-- 🟢🟢item 7-->
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <div class='thumbnail'>
+      <img alt='Gambar 300' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+      <div class='video-overlay'><div class='play-icon'/></div>
+    </div>
+  </a>
+  <a href='https://tmpigaspro.blogspot.com/2025/07/wartna-colkat.html?m=1#'>
+    <p class='video-title'>Uji Kucing Besar 7000 Yos Bagus Kucing Besar 7yang Bihira Mag Simba Pero Madalas Naman Lumuhod sa Boyfriend Niya. HIHI</p>
+  </a>
+</div> 
+            
+
+ <!-- Item 8-->
+      <div class='video-overlay center'><div class='play-icon'/></div>
+      
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='www.google.com'>
+    <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    </a>
+    <p>Kucing Besar 8</p>
+</div>
+
+            
+            
+ <!-- Item 9 -->
+      <div class='video-overlay center'><div class='play-icon'/></div>
+      
+<div class='grid-item' onclick='toggleOverlay(this)'>
+  <a href='www.google.com'>
+    <img alt='Gambar 1' src='https://images2.imgbox.com/f1/30/V3Xq7GcB_o.jpg'/>
+    <div class='video-overlay'><div class='play-icon'/></div>
+    </a>
+    <p> Kucing Besar 9</p>
+</div>
+
+
+
+            <!-- Tambahkan item lain sesuai kebutuhan -->
+            
+            
+            <!-- Pagination Numerik Fixed di Bawah -->
+<div class='pagination-bar'>
+  <div class='page-links'>
+    <a class='page-btn active' href='https://galerimisbah.blogspot.com/'>1</a>
+    <a class='page-btn' href='#page2'>2</a>
+    <a class='page-btn' href='#page3'>3</a>
+    <a class='page-btn' href='#page4'>4</a>
+    <a class='page-btn' href='#page5'>5</a>
+    <a class='page-btn' href='#page6'>6</a>
+  </div>
+  <p class='made-in'>Made in Misbah &#169; 2025</p>
+</div>
+
+<style>
+.pagination-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px 0 5px 0; /* kasih ruang buat teks bawah */
+  text-align: center;
+  border-top: 3px solid #444;
+  z-index: 9999;
+}
+
+.pagination-bar .page-btn {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 15px 28px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  background: #f2f2f2;
+  color: #333;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.pagination-bar .page-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.pagination-bar .page-btn.active {
+  background: #ff6600;
+  color: #fff;
+}
+
+.pagination-bar .made-in {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
+
+            
+          </div>
+          <center><p>Dibuat dengan deepseek</p></center>
+        </b:includable>
+      </b:widget>
+    </b:section>
+
+    <!-- Script -->
+    <script>
+      function toggleOverlay(el) {
+        let overlay = el.querySelector(&#39;.video-overlay&#39;);
+
+        // Jika overlay di klik yang sama &#8594; sembunyikan
+        if (overlay.classList.contains(&#39;show&#39;)) {
+          overlay.classList.remove(&#39;show&#39;);
+          return;
+        }
+
+        // Hilangkan overlay di semua gambar
+        document.querySelectorAll(&#39;.video-overlay&#39;).forEach(function(o) {
+          o.classList.remove(&#39;show&#39;);
+        });
+
+        // Tampilkan overlay di gambar yang diklik
+        overlay.classList.add(&#39;show&#39;);
+      }
+    </script>
+    
+ 
+    
+    
+ 
+    
+<!-- 🟢 iklan dengan gambar-->
+ 
+<div id='modal-iklan-hitam'>
+    <div class='iklan-konten-hitam'>
+        <span class='tutup-iklan-merah' onclick='tutupIklanHitam()'>X</span>
+        
+        <a class='iklan-link-hitam' href='https://link-iklan-topup.com' target='_blank'>
+            <img alt='Cewek Cantik Pegang Topi Pantai' class='iklan-gambar-hitam' src='https://images2.imgbox.com/79/e1/xJhERXf9_o.jpg'/>
+        </a>
+        
+        <div id='countdown-timer'>
+            Iklan ini akan otomatis menutup dalam **2** detik.
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript'>
+/*<![CDATA[*/
+    var iklanHitam = document.getElementById('modal-iklan-hitam');
+    var timerOtomatis;
+    var hitunganMundurInterval;
+
+    function tutupIklanHitam() {
+        if (!iklanHitam) return; 
+        iklanHitam.style.opacity = '0';
+        clearInterval(hitunganMundurInterval); // Hentikan hitungan mundur saat iklan ditutup
+        clearTimeout(timerOtomatis); // Hentikan timer penutup otomatis
+        setTimeout(function() {
+            iklanHitam.style.display = 'none';
+        }, 300); 
+    }
+
+    function mulaiHitunganMundur() {
+        var detikSaatIni = 4; // Mulai dari 4
+        var timerDisplay = document.getElementById('countdown-timer');
+        
+        // Ganti angka 4 di teks awal
+        if (timerDisplay) {
+            timerDisplay.innerHTML = 'Iklan ini akan otomatis menutup dalam <strong>' + detikSaatIni + '</strong> detik.';
+        }
+
+        // Fungsi yang dijalankan setiap 1 detik
+        hitunganMundurInterval = setInterval(function() {
+            detikSaatIni--;
+            
+            if (timerDisplay) {
+                if (detikSaatIni > 0) {
+                     timerDisplay.innerHTML = 'Iklan ini akan otomatis menutup dalam <strong>' + detikSaatIni + '</strong> detik.';
+                } else {
+                     timerDisplay.textContent = 'Iklan ditutup.';
+                }
+            }
+
+            // Hentikan interval jika mencapai 0
+            if (detikSaatIni <= 0) {
+                clearInterval(hitunganMundurInterval);
+            }
+        }, 1000); // 1000ms = 1 detik
+    }
+
+    function initIklan() {
+        if (!iklanHitam) return;
+
+        // Pasang event listener pada tombol tutup
+        var closeButton = document.querySelector('#modal-iklan-hitam .tutup-iklan-merah');
+        if (closeButton) {
+             closeButton.addEventListener('click', tutupIklanHitam);
+        }
+        
+        // Tampilkan iklan
+        iklanHitam.style.display = 'block';
+        setTimeout(function() {
+            iklanHitam.style.opacity = '1';
+        }, 10);
+
+        // Mulai hitungan mundur (5,3,4,2, 1, 0)
+        mulaiHitunganMundur();
+
+        // Iklan hilang otomatis setelah 2 detik (4000 milidetik)
+        timerOtomatis = setTimeout(tutupIklanHitam, 4000); 
+    }
+
+    // Jalankan inisialisasi setelah DOM siap
+    window.addEventListener('load', initIklan);
+/*]]>*/
+</script>
+
+<style type='text/css'>
+/*<![CDATA[*/
+/* Style Utama - POSISI TENGAH LAYAR & TEMA HITAM */
+#modal-iklan-hitam {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+    width: auto; 
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); 
+    border-radius: 12px;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* KONTEN IKLAN (Border dan Background Hitam) */
+.iklan-konten-hitam {
+    background-color: #000000; 
+    border: 3px solid #000000; 
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden; 
+    position: relative;
+}
+
+/* Tombol 'X' - MERAH dan BULAT */
+.tutup-iklan-merah {
+    color: #ffffff; 
+    background-color: #ff0000; 
+    font-size: 18px; 
+    font-weight: bold;
+    position: absolute;
+    top: 0px; 
+    right: 0px; 
+    cursor: pointer;
+    line-height: 30px; 
+    text-align: center;
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%;
+    z-index: 10000; 
+    transition: background-color 0.2s;
+}
+
+.tutup-iklan-merah:hover {
+    background-color: #cc0000;
+}
+
+/* Style untuk Hitungan Mundur (Di Bawah Gambar) */
+#countdown-timer {
+    display: block;
+    width: 100%;
+    background-color: #000000; /* Tetap hitam */
+    color: #ffffff; /* Teks putih */
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px 0;
+    text-align: center;
+    z-index: 10000;
+}
+
+#countdown-timer strong {
+    color: #ffcc00; /* Angka kuning agar menonjol */
+    font-weight: bold;
+}
+
+/* GAMBAR IKLAN */
+.iklan-gambar-hitam {
+    display: block;
+    width: 100%; 
+    height: auto;
+}
+/*]]>*/
+</style>
+    
+    
+    <!-- IKLAN BAWAH-->
+   
+   
+<div class='popup-ads' id='adsPopup'>
+
+  <div class='popup-content'>
+
+    <span class='close' onclick='document.getElementById(&quot;adsPopup&quot;).style.display=&quot;none&quot;'>&#10006;</span>
+
+    
+ <p style='font-size:20px;font-weight:bold;margin-bottom:12px;color:#fff;'>Topup Murah Cepat Aman 🔥</p>
+    
+    
+
+    <a expr:href='&quot;#&quot;' target='_blank'>
+
+      <img alt='Iklan Topup' expr:src='&quot;https://imgkub.com/images/2025/10/19/1000211789.webp&quot;' style='width:100%;border-radius:12px;'/>
+
+    </a>
+
+  </div>
+
+</div>
+
+---
+
+<b:template-skin>
+
+  <![CDATA[
+
+  <style>
+
+    .popup-ads {
+
+      display:none;
+
+      position:fixed;
+
+      z-index:9999;
+
+      inset:0;
+
+      /* 💡 PERUBAHAN UTAMA DI SINI: */
+      /* Mengganti rgba(0,0,0,0.7) (Hitam 700%) menjadi rgba(255,255,255,0.8) (Putih 10%) */
+      background:rgba(255,255,255,0.8); 
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+    }
+
+    .popup-content {
+
+      background:#040720;
+
+      padding:25px;
+
+      border-radius:14px;
+
+      width:600px;
+
+      max-width:95%;
+
+      text-align:center;
+
+      position:relative;
+
+      box-shadow:0 8px 25px rgba(0,0,0,0.5);
+
+      animation: popupScale 0.35s ease;
+
+    }
+
+    .popup-content img {
+
+      max-height:400px;
+
+      object-fit:cover;
+
+    }
+
+    .popup-content .close {
+
+      position:absolute;
+
+      top:10px;
+
+      right:15px;
+
+      font-size:28px;
+
+      cursor:pointer;
+
+      color:#333;
+
+    }
+
+    @keyframes popupScale {
+
+      from {transform:scale(0.8);opacity:0;}
+
+      to {transform:scale(1);opacity:1;}
+
+    }
+
+  </style>
+
+  ]]>
+
+</b:template-skin>
+
+---
+
+<script type='text/javascript'>
+
+  //<![CDATA[
+
+  window.onload = function() {
+
+    setTimeout(function(){
+
+      var popup = document.getElementById('adsPopup');
+
+      if (popup) {
+
+        popup.style.display = 'flex';
+
+      }
+
+    }, 2000);
+
+  };
+
+  //]]>
+
+</script>
+    
+   
+    
+    <!--Iklan Bawah 2-->
+    
+    <div class='popup-ads' id='adsPopup'>
+
+  <div class='popup-content'>
+
+    <span class='close' onclick='document.getElementById(&quot;adsPopup&quot;).style.display=&quot;none&quot;'>&#10006;</span>
+
+    
+
+    <p style='font-size:20px;font-weight:bold;margin-bottom:12px;color:fff;'>Topup Murah Cepat Aman 🔥</p>
+
+    
+
+    <a expr:href='&quot;https://link-iklan-topup.com&quot;' target='_blank'>
+
+      <img alt='Iklan Topup' expr:src='&quot;https://imgkub.com/images/2025/10/19/1000211791.jpg&quot;' style='width:100%;border-radius:12px;'/>
+
+    </a>
+
+  </div>
+
+</div>
+
+---
+
+<b:template-skin>
+
+  <![CDATA[
+
+  <style>
+
+    .popup-ads {
+
+      display:none;
+
+      position:fixed;
+
+      z-index:9999;
+
+      inset:0;
+
+      background:rgba(0,0,0,0.7);
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+    }
+
+    .popup-content {
+
+      background:#040720;
+
+      padding:25px;
+
+      border-radius:14px;
+
+      width:600px;
+
+      max-width:95%;
+
+      text-align:center;
+
+      position:relative;
+
+      box-shadow:0 8px 25px rgba(0,0,0,0.5);
+
+      animation: popupScale 0.35s ease;
+
+    }
+
+    .popup-content img {
+
+      max-height:400px;
+
+      object-fit:cover;
+
+    }
+
+    .popup-content .close {
+
+      position:absolute;
+
+      top:10px;
+
+      right:15px;
+
+      font-size:28px;
+
+      cursor:pointer;
+
+      color:#333;
+
+    }
+
+    @keyframes popupScale {
+
+      from {transform:scale(0.8);opacity:0;}
+
+      to {transform:scale(1);opacity:1;}
+
+    }
+
+  </style>
+
+  ]]>
+
+</b:template-skin>
+
+---
+
+<script type='text/javascript'>
+
+  //<![CDATA[
+
+  window.onload = function() {
+
+    setTimeout(function(){
+
+      var popup = document.getElementById('adsPopup');
+
+      if (popup) {
+
+        popup.style.display = 'flex';
+
+      }
+
+    }, 2000);
+
+  };
+
+  //]]>
+
+</script>
+    
+
+  </body>
+</html>
